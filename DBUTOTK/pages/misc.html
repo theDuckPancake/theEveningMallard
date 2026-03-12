@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>The Evening Mallard</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../style.css">
+        <script type="text/javascript" src="../../script.js" async defer></script>
+        <script src="../../templates/reusables.js"></script>
+        <script src="../../templates/links.js"></script>
+
+        <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    </head>
+    <body id="body" class="body" onload="changeFont('body'), initialiseDIVS('misc')">        
+        <!-- Setting up the overlay for when image clicked -->
+        <div id="selected_img"></div>
+        <img-notes></img-notes>
+        <div id="overlay"></div>
+
+        <!--Navbar!-->
+        <site-navbar></site-navbar>
+        <br>
+
+        <!--Page selection list-->
+        <div class="page_form"><page-select></page-select></div>
+
+        <h1 id="page_title">Miscallaneous Drawings</h1>
+        <br>
+
+        <div class="gallery-div" id="U">
+            <h4 class="desc">The Unused</h4>
+            <p class="desc">OK, 'unused' is a bit of a lie, as the first two were posted to my <a href="https://www.instagram.com/tdp_thepancakecut/">instagram account</a>.</p>
+            <div id="gallery"></div>
+        </div>
+
+        <div class="gallery-div" id="O">
+            <h4>Other Drawings</h4>
+            <div id="gallery"></div>
+        </div>
+
+        <div id="nav_btn_row">
+            <a href="914.html"><button class="prev">Prev</button></a>
+            <button class="next" disabled>Next</button>
+        </div>
+
+        <links-bar></links-bar>
+        
+        <foot-c></foot-c>
+    </body>
+</html>

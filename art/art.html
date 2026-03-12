@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>The Evening Mallard</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../style.css">
+        <script type="text/javascript" src="../script.js" async defer></script>
+        <script src="../templates/reusables.js"></script>
+        <script src="../templates/links.js" async defer></script>
+        <script src="art_page.js"></script>
+
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    </head>
+    <body id="body" class="body" onload='displayImages("2026", 1, 0, "2026"), changeFont("body")'>        
+        <!-- Setting up the overlay for when image clicked -->
+        <div id="selected_img"></div>
+        <img-notes></img-notes>
+        <div id="overlay"></div>
+
+        <!--Navbar!-->
+        <site-navbar></site-navbar>
+        <br>
+
+        <!--Page selection list-->
+        <div class="page_form">
+            <year-select></year-select>
+        </div>
+
+        <h1 id="page_title">2026</h1>
+        <p class="desc">Click the images for a better view and some notes! It's pretty barren for now, but hopefully (if I stick with it), it'll slowly fill up as the year progresses.</p>
+
+        <!--Please stop inspecting my dreadful handiwork-->
+        <div id="gallery"></div>
+
+        <control-buttons></control-buttons>
+
+        <links-bar></links-bar>
+        
+        <foot-c></foot-c>
+    </body>
+</html>
