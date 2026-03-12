@@ -680,4 +680,8 @@ body.body.accessible .wrap {
         width: 100%;
         height: 375px;
     }
+
+    .wrap div {
+        font-size: small;
+    }
 }
