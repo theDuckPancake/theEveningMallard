@@ -634,14 +634,14 @@ body.body.accessible .wrap {
     padding: 7px 10px;
   }
 
-  .wrap img {
-    object-fit: scale-down;
-    z-index: 0;
-  }
+    .wrap img {
+        object-fit: scale-down;
+        z-index: 0;
+    }
 
-  .wrap {
-    max-width: 100%;
-    max-height: 100%;
+    .wrap {
+        max-width: 300px;
+        max-height: 400px;
     }
 }
 
@@ -667,5 +667,15 @@ body.body.accessible .wrap {
 
     .btn.gmail {
         padding-top: 9px;
+    }
+
+    .wrap img {
+        object-fit: scale-down;
+        z-index: 0;
+    }
+
+    .wrap {
+        max-width: 100%;
+        max-height: 100%;
     }
 }
