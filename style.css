@@ -682,6 +682,7 @@ body.body.accessible .wrap {
     }
 
     .wrap div {
-        font-size: x-small;
+        font-size: small;
+        background-color: white;
     }
 }
