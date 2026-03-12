@@ -1081,13 +1081,13 @@
         "date": "February 24, 2021",
         "text": [
             "こんな絵なんか書いた覚え全然ない。",
-            "<div class='author'>Oh, this twat must think he's so funny typing in Japanese. What an arsehole.</div>",
+            "<div class='small'>Oh, this twat must think he's so funny typing in Japanese. What an arsehole.</div>",
             "The text in the image translates to as follows:",
             "&nbsp - Panel 1: May the Goddess smile upon you.",
             "&nbsp - Panel 2: Should have spoke(n) in Hylian, sorry.",
             "&nbsp - Panel 3: Shoot! Everyone playing the game <i>[in informal Japanese, for some reason]</i> can't read Hylian. Wait. They can't read Japanese (either)!",
             "As noted above, I used quite informal Japanese, which is a little strange considering who it's coming from.",
-            "<div class='translation'><div class='author'>What's that? You want the translation for the text above? Ugh, fine, I guess you DID turn on Accessible Mode. It says \"I don't remember making a drawing like this at all.\"</div></div>"
+            "<div class='translation'><div class='small'>What's that? You want the translation for the text above? Ugh, fine, I guess you DID turn on Accessible Mode. It says \"I don't remember making a drawing like this at all.\"</div></div>"
         ],
         "mask": null,
         "url": "https://www.reddit.com/r/Breath_of_the_Wild/comments/lre0ya/drawing_badly_until_botw_2_day_109_translation_in/"

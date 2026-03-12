@@ -37,6 +37,38 @@ pre {
     font-size: inherit;
 }
 
+.wrap {
+    width: 500px;
+    height: 500px;
+    shape-outside: square();
+    padding: 1%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+}
+
+.wrap.left {
+    float: left;
+}
+
+.wrap.right {
+    float: right;
+}
+
+.wrap img {
+    max-width: 95%;
+    max-height: 95%;
+}
+
+.wrap div {
+    position: absolute;
+    bottom: 0;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: center;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* overlay styling */
 #overlay {
@@ -180,9 +212,15 @@ h4.pic_note {
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-/* creating a style for the author acknowledgement */
-.author {
+/* small text */
+.small {
     float: right;
+    color: #a0a0a0;
+    font-size: smaller;
+}
+
+/* caption text */
+.caption {
     color: #a0a0a0;
     font-size: smaller;
 }
@@ -344,6 +382,7 @@ img.clicked {
 .dropdown_div {
     display: block;
     position: relative;
+    z-index: 10;
 }
 
 .other_pages {
@@ -491,8 +530,17 @@ body.body.accessible .translation {
     display: inline;
 }
 
-body.body.accessible .author {
+body.body.accessible .small {
     color: white;
+}
+
+body.body.accessible .caption {
+    color: black;
+    font-size: small;
+}
+
+body.body.accessible .wrap {
+    padding: 4%;
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ RESPONSIVE DESIGN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -585,6 +633,16 @@ body.body.accessible .author {
     width: 120px;
     padding: 7px 10px;
   }
+
+  .wrap img {
+    object-fit: scale-down;
+    z-index: 0;
+  }
+
+  .wrap {
+    max-width: 100%;
+    max-height: 100%;
+    }
 }
 
 /* When screen is small enough (i.e. phone screens), reduce the number of images per column in the Bad Drawings pages */

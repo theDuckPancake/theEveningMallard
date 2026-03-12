@@ -33,7 +33,8 @@ class LinksBar extends HTMLElement {
 
 class FooterRights extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<footer>©TheEveningMallard.com 2026. All Rights Reserved.</footer>`
+        this.innerHTML = `
+        <footer>©TheEveningMallard.com 2026. All Rights Reserved. <br> The Legend of Zelda and all associated names are Trademark and © of Nintendo 1986-2026.</footer>`
     }
 }
 
