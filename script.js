@@ -95,7 +95,7 @@ async function displayImages(days, start, end=99, identifier="Day", space=" "){
       img.alt = `${identifier} ${i}`;
       if (parseInt(days) >= 2026 || days == "Pre 2026") {
         const art_item = art_data[`${identifier} ${i}`];
-        img.src = `images/${days}/${identifier}${space}${i}.png`;
+        img.src = `../images/${days}/${identifier}${space}${i}.png`;
         img.alt = art_item.title;
       }
       else if (!(gif_days.includes(`Day ${i}`))) {
