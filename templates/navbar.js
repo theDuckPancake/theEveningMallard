@@ -5,7 +5,7 @@ class SiteNavbar extends HTMLElement {
             <a href="index.html" id='index' class="main"><img src="art/images/2026/2026 1.png" class="logo" alt="The Evening Mallard"><div id="logo_text">The Evening Mallard</div></a>
             <div class="other_pages">
                 <a href="about.html" id='about'>About</a>
-                <a href="art/art.html" id='art'>Art</a>
+                <a href="art/files/art.html" id='art'>Art</a>
                 <a href ="DBUTOTK/pages/1-100.html" id="DBUBOTW2">DBUBOTW2</a>
                 <a class="disabled">Coming Soon</a>
                 <a href="blog.html" id='blog'>Blog</a>
