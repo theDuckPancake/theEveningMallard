@@ -640,8 +640,8 @@ body.body.accessible .wrap {
     }
 
     .wrap {
-        max-width: 300px;
-        max-height: 400px;
+        width: 300px;
+        height: 400px;
     }
 }
 
