@@ -17,6 +17,8 @@ let automute = localStorage.getItem("automute");
 let accessibility = localStorage.getItem("accessibility");
 let img_style = localStorage.getItem("img_style")
 
+let slide_index = 1;
+
 let image_data = {};
 fetch("../Days.json")
   .then(res => res.json())
@@ -52,6 +54,7 @@ const chapters_st2 = {'A':[1,1,18], 'B':[2,1,18], 'C':[3,1,37], 'D':[4,1,52], 'E
 /* Key name (div.id) : [start num, end num-1] */
 const miscallaneous = {'U':[1,2], 'O':[1,9]}
 
+/* code thanks to w3schools */
 function hamburgerToggle() {
   var x = document.getElementById("mainTopnav");
   if (x.className === "topnav") {
@@ -61,6 +64,7 @@ function hamburgerToggle() {
   }
 }
 
+/* displays the clickable images in a loop */
 async function displayImages(days, start, end=99, identifier="Day", space=" "){
 
   let art_data = {};
@@ -186,7 +190,7 @@ async function displayImages(days, start, end=99, identifier="Day", space=" "){
           else {
             notes_content.innerHTML = null;
           }
-          if (item.mask === null) {
+          if (item.mask === null || item.mask === undefined) {
             drawing_url.textContent = `Visit Day ${i}`;
           }
           else {
@@ -284,8 +288,6 @@ function page_switch() {
       };
   });
 }
-
-let slide_index = 1;
 
 function hide_overlay(obj) {
   obj.addEventListener("click", (e) => {
@@ -502,12 +504,6 @@ function fetchFiller(year, month, file) {
       .then(response => response.text())
       .then(data => {
           document.getElementById("article-placeholder").innerHTML = data;
-      });
-
-  fetch(`articles/daily/${year}/${month}/${file}.txt`)
-      .then(response => response.text())
-      .then(data => {
-          document.getElementById("daily-placeholder").textContent = data;
       });
 }
 

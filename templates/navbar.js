@@ -24,6 +24,16 @@ class SiteNavbar extends HTMLElement {
             </a>
         </div>
         `;
+
+        /* set up quack sound */
+        const quack = new Audio("duck_quack.mp3")
+        quack.volume = 0.8;
+
+        /* get navbar homepage/index button for hover interaction */
+        const index = document.getElementById("index");
+        index.addEventListener("mouseover", function() {
+            quack.play();
+        })
     }
 }
 
