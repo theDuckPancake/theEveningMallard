@@ -30,6 +30,11 @@ pre {
     text-wrap: initial;
 }
 
+.err {
+    margin-right: 0%;
+    margin-left: 0%;
+}
+
 .alt {
     margin-right: 5%;
     margin-left: 5%;
