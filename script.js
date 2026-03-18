@@ -35,7 +35,8 @@ async function loadArtData() {
 const slideshow_days = {'Day 281':2, 'Day 316':2, 'Day 526':2, 'Day 527':2, 'Day 528':2, 'Day 529':2, 'Day 530':2, 'Day 542':2, 'Day 672':3, 
   'Day 679':4, 'Day 682':2, 'Day 687':2, 'Day 698':2, 'Day 699':2, 'Day 703':4, 'Day 707':2,  'Day 713':2, 'Day 721':2, 'Day 778':3, 
   'Day 786':2, 'Day 802':2, 'Day 826':2, 'Day 833':3, 'Day 858':2, 'Day 865':2, 'Day 892':2, 'Day 893':2, 'Day 894':3, 'Day 897':2, 'Day 899':2, 
-  'Day 902':2, 'Day 907':2, 'Day 914':2, 'Day 789':2, 'H-6':2, 'Day 392':2, 'Day 847':2, 'O-2':2, 'Day 87':2, 'Day 137':2, 'Day 156':2, 'Day 376':2
+  'Day 902':2, 'Day 907':2, 'Day 914':2, 'Day 789':2, 'H-6':2, 'Day 392':2, 'Day 847':2, 'O-2':2, 'Day 87':2, 'Day 137':2, 'Day 156':2, 'Day 376':2,
+  'Day 515':2
 };
 
 /* TODO : 
