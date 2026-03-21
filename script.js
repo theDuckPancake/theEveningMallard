@@ -161,7 +161,8 @@ async function displayImages(days, start, end=99, identifier="Day", space=" "){
         if (`${identifier}${space}${i}` in slideshow_days) { item = image_data[`${identifier} ${i}-1`]; };
 
         if (identifier == "Day") {
-          heading.textContent=`Day ${i}`;
+          if (i >= 667) {heading.textContent=`Day ${i} (${i+1})`}
+          else {heading.textContent=`Day ${i}`};
         }
         else if (identifier in chapters_st1) {
           if (identifier == "W" || identifier == "H") {
@@ -196,6 +197,9 @@ async function displayImages(days, start, end=99, identifier="Day", space=" "){
           }
           else {
             drawing_url.textContent = item.mask;
+          }
+          if (item.url === undefined) {
+            drawing_url.textContent = null;
           }
           drawing_url.setAttribute("href", item.url);
         }
