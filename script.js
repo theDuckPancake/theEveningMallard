@@ -45,7 +45,7 @@ const gif_days = ['Day 507', 'Day 674', 'Day 861'];
 
 /* Key name (div.id) : [chapter number, starting number, ending number-1]*/
 const chapters_st1 = {'A':[1,1,7], 'B':[2,1,15], 'C':[3,1,17], 'D':[4,1,17], 'E':[5,1,16], 'F':[6,1,10], 'G':[7,1,2], 'H':['Bonus',0,6], 'W': ['Preface',0,1]};
-const chapters_st2 = {'A':[1,1,18], 'B':[2,1,18], 'C':[3,1,37], 'D':[4,1,52], 'E':[5,1,35], 'F':[6,1,4]}
+const chapters_st2 = {'A':[1,1,18], 'B':[2,1,18], 'C':[3,1,37], 'D':[4,1,54], 'E':[5,1,35], 'F':[6,1,4]}
 /* Key name (div.id) : [start num, end num-1] */
 const miscallaneous = {'U':[1,2], 'O':[1,9]}
 
@@ -69,6 +69,7 @@ function hamburgerToggle() {
 async function displayImages(days, start, end=99, identifier="Day", space=" "){
 
   let art_data = {};
+  let item;
 
   if (parseInt(days) >= 2026 || days == "Pre 2026") {
     art_data = await loadArtData();
@@ -157,8 +158,9 @@ async function displayImages(days, start, end=99, identifier="Day", space=" "){
         selected_img.style.display = "flex";
         overlay.style.display = "block";
 
-        let item = image_data[`${identifier} ${i}`];
+        item = image_data[`${identifier} ${i}`];
         if (`${identifier}${space}${i}` in slideshow_days) { item = image_data[`${identifier} ${i}-1`]; };
+        if (`${identifier}` == 'D' && days == '913') { item = image_data[`${identifier}-2 ${i}`]};
 
         if (identifier == "Day") {
           if (i >= 667) {heading.textContent=`Day ${i} (${i+1})`}
