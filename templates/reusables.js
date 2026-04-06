@@ -46,7 +46,7 @@ class ImgNotes extends HTMLElement {
             <i><h4 id="pub_date" class="pic_note"></h4></i>
             <div id="notes_content" class="pic_note"></div>
             <br>
-            <a id="link" href="#" class="highlight"></a>
+            <a id="link" href="#" target="_blank" class="highlight"></a>
         </div>
         `
     }
@@ -73,6 +73,8 @@ class PageSelect extends HTMLElement {
                 <option value="Day 913">Day 913 (Story 2)</option>
                 <option value="Final Day">Final Day (High Quality)</option>
                 <option value="Misc">Miscallaneous Drawings</option>
+                <option value="Boko">The Bokoblin Saga</option>
+                <option value="Reddit">The Reddit Story</option>
             </select>
         </label>
         `

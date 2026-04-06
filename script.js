@@ -32,18 +32,12 @@ async function loadArtData() {
   return art; 
 }
 
-const slideshow_days = {'Day 281':2, 'Day 316':2, 'Day 526':2, 'Day 527':2, 'Day 528':2, 'Day 529':2, 'Day 530':2, 'Day 542':2, 'Day 672':3, 
+const slideshow_days = {'Day 281':2, 'Day 316':2, 'Day 526':2, 'Day 527':2, 'Day 528':2, 'Day 529':2, 'Day 530':2, 'Day 542':2, 'Day 672':4, 
   'Day 679':4, 'Day 682':2, 'Day 687':2, 'Day 698':2, 'Day 699':2, 'Day 703':4, 'Day 707':2,  'Day 713':2, 'Day 721':2, 'Day 778':3, 
   'Day 786':2, 'Day 802':2, 'Day 826':2, 'Day 833':3, 'Day 858':2, 'Day 865':2, 'Day 892':2, 'Day 893':2, 'Day 894':3, 'Day 897':2, 'Day 899':2, 
   'Day 902':2, 'Day 907':2, 'Day 914':2, 'Day 789':2, 'H-6':2, 'Day 392':2, 'Day 847':2, 'O-2':2, 'Day 87':2, 'Day 137':2, 'Day 156':2, 'Day 376':2,
   'Day 515':2
 };
-
-/* TODO : 
-  - All the notes... ALL of them [Kill me]
-  - Make comic panel for Day 913 Bonus Content [HARD]
-    - Get reference images online (Rhea, Link, Seteth, Garreg Mach Monastery)
-  - Contact u/HornyPhoenixWright and u/awkward_potatoess WITH VPN [EASY] */
 
 const video_days = ['Day 118', 'Day 289', 'Day 671', 'Day 700', 'Day 729'];
 
@@ -54,6 +48,12 @@ const chapters_st1 = {'A':[1,1,7], 'B':[2,1,15], 'C':[3,1,17], 'D':[4,1,17], 'E'
 const chapters_st2 = {'A':[1,1,18], 'B':[2,1,18], 'C':[3,1,37], 'D':[4,1,52], 'E':[5,1,35], 'F':[6,1,4]}
 /* Key name (div.id) : [start num, end num-1] */
 const miscallaneous = {'U':[1,2], 'O':[1,9]}
+
+const boko_saga = {'Original': [113, 116, 121, 125, 140, 162, 170],
+  'Rebooted': [672, 679, 682, 687, 689, 693, 696, 703, 707, 710, 716, 717, 721, 724, 731, 732, 733, 734, 735, 736, 738, 739, 742, 745, 749, 773, 787, 791, 792, 793, 794, 795, 796, 797, 807, 808, 809, 810, 811, 812, 813, 828, 829, 830, 831, 832]
+}
+
+const reddit = [722, 723, 729, 737, 746, 751, 774, 781, 788, 817, 818, 826, 833, 837, 838, 844, 851, 858, 865, 872, 873, 879, 899, 907]
 
 /* code thanks to w3schools */
 function hamburgerToggle() {
@@ -222,6 +222,10 @@ async function displayImages(days, start, end=99, identifier="Day", space=" "){
 function initialiseDIVS(days) {
 
   const divs = document.querySelectorAll(".gallery-div");
+  const gallery = document.getElementById("gallery");
+
+  let left;
+  let right;
 
   if (days == "616-666") {
     divs.forEach(div => displayImages(days, chapters_st1[div.id][1], chapters_st1[div.id][2], div.id, '-'));
@@ -234,6 +238,35 @@ function initialiseDIVS(days) {
   else if (days == "misc") {
     divs.forEach(div => {
       displayImages(days, miscallaneous[div.id][0], miscallaneous[div.id][1], div.id, "-");
+    })
+  }
+  else if (days == "boko") {
+    divs.forEach(div => {
+      boko_saga[div.id].forEach(num => {
+        if (num > 600 && num < 700) {
+          days = "601-615---667-700";
+        }
+        else {
+          left = Math.floor(num/100)*100 + 1;
+          right = Math.ceil(num/100)*100;
+          days = left.toString() + '-' + right.toString();
+        }
+        displayImages(days, num, 0);
+        if (div.id=="Original" && num >= 170) {
+          gallery.id += " used";
+        }
+      }
+      )
+    })
+  }
+  else if (days == "reddit") {
+    reddit.forEach(num => {
+      left = Math.floor(num/100)*100 + 1;
+      right = Math.ceil(num/100)*100;
+      if (right > 914) { right = 914 };
+      days = left.toString() + '-' + right.toString();
+
+      displayImages(days, num, 0);
     })
   }
 }
@@ -288,6 +321,12 @@ function page_switch() {
         case "Misc":
           location.assign("misc.html");
           break;
+        case "Boko":
+          location.assign("boko.html");
+          break;
+        case "Reddit":
+          location.assign("reddit-story.html");
+          break;
         default:
           break;
       };
@@ -301,6 +340,7 @@ function hide_overlay(obj) {
     overlay.style.display = "none";
     selected_img.style.display = "none";
     notes.style.display = "none";
+
     const grabbedElement = document.getElementById("delete_me");
     if (grabbedElement) {
       if (grabbedElement.className == "vid") {
@@ -312,6 +352,9 @@ function hide_overlay(obj) {
       grabbedElement.remove();
       slide_index = 1;
     }
+
+    const notes_content = document.getElementById("notes_content");
+    notes_content.innerHTML = null;
   })
 }
 
@@ -395,7 +438,7 @@ function createSlideshow(i, identifier="Day", space=" ") {
 }
 
 function changeText(notes_content, slide_index, identifier, i) {
-  let item = image_data[`Day ${i}-${slide_index}`];
+  let item = image_data[`${identifier} ${i}-${slide_index}`];
 
   notes_content.innerHTML = item.text.join("\n\n");
 }

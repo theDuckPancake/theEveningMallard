@@ -308,6 +308,11 @@ footer {
 
 .desc {
     margin-left: 0;
+    margin-right: 0;
+}
+
+.justify {
+    text-align: justify;
 }
 
 /* Img scaling */

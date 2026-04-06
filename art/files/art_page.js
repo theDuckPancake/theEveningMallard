@@ -1,8 +1,14 @@
 localStorage.setItem("current-page", "2026");
 
-const year_list = ["Pre 2026", "2026"]
+const year_list = ["Pre 2026", "2026"];
+const pre_2026 = 1;
+const _2026 = 1;
 
 let current_page = localStorage.getItem("current-page");
+
+document.addEventListener("DOMContentLoaded", e => {
+    displayImages("2026", 1, _2026, "2026");
+})
 
 class YearSelect extends HTMLElement {
     connectedCallback() {
@@ -97,12 +103,12 @@ function commitChange(event)  {
         case "Pre 2026":
             heading.textContent = "Pre 2026"
             preface.textContent = "There are more drawings, but for reasons that shall remain unbeknownst to you, I'm not showing them."
-            displayImages("Pre 2026", 1, 1, "Pre");
+            displayImages("Pre 2026", 1, pre_2026, "Pre");
             break;
         case "2026":
             heading.textContent = "2026";
             preface.textContent = "Click the images for a better view and some notes! It's pretty barren for now, but hopefully (if I stick with it), it'll slowly fill up as the year progresses."
-            displayImages("2026", 1, 0, "2026")
+            displayImages("2026", 1, _2026, "2026")
             break;
     }
 

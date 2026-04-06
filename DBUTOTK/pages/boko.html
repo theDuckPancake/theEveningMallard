@@ -9,12 +9,11 @@
         <link rel="stylesheet" href="../../style.css">
         <script type="text/javascript" src="../../script.js" async defer></script>
         <script src="../../templates/reusables.js"></script>
-        <script src="../../templates/links.js" async defer></script>
-        <script src="art_page.js"></script>
+        <script src="../../templates/links.js"></script>
 
         <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     </head>
-    <body id="body" class="body" onload='changeFont("body")'>        
+    <body id="body" class="body" onload="changeFont('body'), initialiseDIVS('boko')">        
         <!-- Setting up the overlay for when image clicked -->
         <div id="selected_img"></div>
         <img-notes></img-notes>
@@ -25,17 +24,25 @@
         <br>
 
         <!--Page selection list-->
-        <div class="page_form">
-            <year-select></year-select>
+        <div class="page_form"><page-select></page-select></div>
+
+        <h1 id="page_title">The Bokoblin Saga</h1>
+        <br>
+
+        <div class="gallery-div" id="Original">
+            <h4 class="desc">Original</h4>
+            <div id="gallery"></div>
         </div>
 
-        <h1 id="page_title">2026</h1>
-        <p class="desc">Click the images for a better view and some notes! It's pretty barren for now, but hopefully (if I stick with it), it'll slowly fill up as the year progresses.</p>
+        <div class="gallery-div" id="Rebooted">
+            <h4>Blood Mooned</h4>
+            <div id="gallery"></div>
+        </div>
 
-        <!--Please stop inspecting my dreadful handiwork-->
-        <div id="gallery"></div>
-
-        <control-buttons></control-buttons>
+        <div id="nav_btn_row">
+            <a href="misc.html"><button class="prev">Prev</button></a>
+            <a href="reddit-story.html"><button class="next">Next</button></a>
+        </div>
 
         <links-bar></links-bar>
         
