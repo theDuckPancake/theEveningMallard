@@ -1,8 +1,8 @@
 localStorage.setItem("current-page", "2026");
 
 const year_list = ["Pre 2026", "2026"];
-const pre_2026 = 1;
-const _2026 = 1;
+const pre_2026 = 1; // number of images - 1
+const _2026 = 2; // number of images - 1 (e.g. if 3 images to display, _2026 = 3-1 = 2)
 
 let current_page = localStorage.getItem("current-page");
 
