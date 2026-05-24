@@ -55,6 +55,8 @@ pre {
 
 .wrap.left {
     float: left;
+    width: 500px;
+    height: 500px;
 }
 
 .wrap.right {
@@ -81,11 +83,10 @@ pre {
 }
 
 .flex img {
-    max-width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
+    max-width: 60%;
+    padding-left: 20%;
+    padding-right: 20%;
 }
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* overlay styling */
 #overlay {
@@ -665,6 +666,12 @@ body.body.accessible .wrap {
     .wrap {
         width: 300px;
         height: 400px;
+    }
+
+    .flex img {
+        max-width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }
 
