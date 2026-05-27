@@ -55,8 +55,8 @@ pre {
 
 .wrap.left {
     float: left;
-    width: 500px;
-    height: 500px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 .wrap.right {
@@ -65,8 +65,8 @@ pre {
 
 .wrap img {
     position: relative;
-    max-width: 95%;
-    max-height: 95%;
+    max-width: 90%;
+    max-height: 90%;
 }
 
 .wrap div {
