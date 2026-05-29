@@ -26,6 +26,14 @@ fetch("../Days.json")
     image_data = data;
   });
 
+let art_items = {};
+    fetch("art_item.json")
+    .then(res => res.json())
+    .then(data => {
+      art_items = data;
+    });
+
+
 async function loadArtData() {
   const res = await fetch("art_item.json");
   const art = await res.json();
@@ -36,7 +44,7 @@ const slideshow_days = {'Day 281':2, 'Day 316':2, 'Day 526':2, 'Day 527':2, 'Day
   'Day 679':4, 'Day 682':2, 'Day 687':2, 'Day 698':2, 'Day 699':2, 'Day 703':4, 'Day 707':2,  'Day 713':2, 'Day 721':2, 'Day 778':3, 
   'Day 786':2, 'Day 802':2, 'Day 826':2, 'Day 833':3, 'Day 858':2, 'Day 865':2, 'Day 892':2, 'Day 893':2, 'Day 894':3, 'Day 897':2, 'Day 899':2, 
   'Day 902':2, 'Day 907':2, 'Day 914':2, 'Day 789':2, 'H-6':2, 'Day 392':2, 'Day 847':2, 'Xmas2024-2':2, 'Day 87':2, 'Day 137':2, 'Day 156':2, 'Day 376':2,
-  'Day 515':2, 'O-4':2
+  'Day 515':2, 'O-4':2, '2026 6':4
 };
 
 const video_days = ['Day 118', 'Day 289', 'Day 671', 'Day 700', 'Day 729'];
@@ -444,6 +452,14 @@ function createSlideshow(i, identifier="Day", space=" ") {
 
 function changeText(notes_content, slide_index, identifier, i) {
   let item = image_data[`${identifier} ${i}-${slide_index}`];
+  if (item == undefined) {
+    if (slide_index > 1) {
+      item = art_items[`${identifier} ${i}-${slide_index}`];
+    }
+    else {
+      item = art_items[`${identifier} ${i}`];
+    }
+  }
 
   notes_content.innerHTML = item.text.join("\n\n");
 }
