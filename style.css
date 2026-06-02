@@ -137,11 +137,16 @@ pre {
     line-height: 110%;
     max-width: 100%;
     margin-left: 0;
+    font-size: 16px;
     text-align: justify;
 }
 
 h2.pic_note {
-    font-size: 32px;
+    font-size: 28px;
+}
+
+h2.pic_note.decrease {
+    font-size: 24px;
 }
 
 h4.pic_note {
@@ -504,7 +509,7 @@ img.clicked {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ACCESSIBLE MODE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 body.body.accessible {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 body {
@@ -517,11 +522,16 @@ body.body.accessible .pic_note {
 }
 
 body.body.accessible h2.pic_note {
-    font-size: 30px;
+    font-size: 28px;
+}
+
+body.body.accessible h2.pic_note.decrease {
+    font-size: 22px;
+    text-align: left;
 }
 
 body.body.accessible h4.pic_note {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 body.body.accessible .highlight {
@@ -643,8 +653,13 @@ body.body.accessible .wrap {
     transform: translate(-50%, 0%);
   }
 
+  
+    #notes.wide {
+        top: 38.5%;
+    }
+
   #notes_content {
-    max-height: 50%;
+    max-height: 60%;
     overflow-y: auto;
   }
 

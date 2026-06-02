@@ -164,6 +164,10 @@ async function displayImages(days, start, end=99, identifier="Day", space=" "){
         }
 
         selected_img.style.display = "flex";
+        let pic = selected_img.firstChild;
+        let height = pic.clientHeight;
+        let width = pic.clientWidth;
+        if (height/width < 0.8) { notes.className = "wide"; } else { notes.className = null; }
         overlay.style.display = "block";
 
         item = image_data[`${identifier} ${i}`];
@@ -194,6 +198,7 @@ async function displayImages(days, start, end=99, identifier="Day", space=" "){
         else {
           item = art_data[`${identifier} ${i}`];
           heading.textContent = item.title;
+          if (heading.textContent.length >= 20) { heading.className += " decrease"; }
           pub_date.textContent = item.date;
         }
 
@@ -352,6 +357,7 @@ function hide_overlay(obj) {
 
     overlay.style.display = "none";
     selected_img.style.display = "none";
+    notes.className = "";
     notes.style.display = "none";
 
     const grabbedElement = document.getElementById("delete_me");
@@ -368,6 +374,8 @@ function hide_overlay(obj) {
 
     const notes_content = document.getElementById("notes_content");
     notes_content.innerHTML = null;
+    const heading = document.getElementById("day_no");
+    heading.className = "pic_note";
   })
 }
 
