@@ -7,7 +7,6 @@ class SiteNavbar extends HTMLElement {
                 <a href="../../about.html" id='about'>About</a>
                 <a href="../../art/files/art.html" id='Art'>Art</a>
                 <a href ="../../DBUTOTK/pages/1-100.html" id="DBUBOTW2">DBUBOTW2</a>
-                <a class="disabled">Coming Soon</a>
                 <a href="../../blog.html" id='blog'>Blog</a>
                 <div id='options' class="dropdown_div">
                     <div id="opt_btn" class="dropdown" onclick="openDropdown()">Options</div>
